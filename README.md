@@ -1,151 +1,84 @@
-<<<<<<< HEAD
-# ⚡ TaskFlow — REST API + Frontend
+# ✅ TaskFlow
 
-A full-stack task management app built as part of the Backend Developer Intern assignment.
+TaskFlow is a full-stack task management platform designed to help users organize, track, and manage their daily work efficiently. The application provides secure authentication, task lifecycle management, role-based access control, and administrative tools through a modern React interface backed by scalable REST APIs.
 
-## What's inside
+## 🚀 Features
 
-- **Backend**: Node.js + Express REST API with JWT auth, role-based access, and full CRUD
-- **Frontend**: React app that consumes the API
-- **Database**: MongoDB with Mongoose ODM
-- **Auth**: JWT tokens, bcrypt password hashing, rate limiting
-- **Docs**: Swagger UI available at `/api-docs`
+### Authentication & Security
+- User Registration & Login
+- JWT-Based Authentication
+- Role-Based Access Control
+- Password Hashing with bcrypt
+- Rate Limiting & Security Headers
 
----
+### Task Management
+- Create Tasks
+- Update Tasks
+- Delete Tasks
+- Task Prioritization
+- Status Tracking
 
-## Project Structure
+### Admin Features
+- User Management
+- Role Management
+- System Monitoring
 
-```
+### API Features
+- RESTful Architecture
+- Swagger Documentation
+- Pagination & Filtering
+- Input Validation
+
+## 🛠 Tech Stack
+
+Frontend
+- React
+- JavaScript
+- Axios
+
+Backend
+- Node.js
+- Express.js
+
+Database
+- MongoDB
+- Mongoose
+
+Security
+- JWT
+- bcrypt
+- Helmet
+
+## 📂 Project Structure
+
 taskflow/
 ├── backend/
-│   ├── src/
-│   │   ├── config/         # DB connection, Swagger setup
-│   │   ├── controllers/    # Route handlers
-│   │   ├── middleware/     # Auth, error handling, validation
-│   │   ├── models/         # Mongoose schemas
-│   │   ├── routes/v1/      # Versioned API routes
-│   │   ├── utils/          # JWT helper
-│   │   ├── validators/     # express-validator rules
-│   │   ├── app.js          # Express app config
-│   │   └── server.js       # Entry point
-│   ├── .env.example
-│   └── package.json
-│
 ├── frontend/
-│   ├── src/
-│   │   ├── components/     # Navbar, TaskModal
-│   │   ├── context/        # AuthContext (global auth state)
-│   │   ├── pages/          # Login, Register, Dashboard, AdminPanel
-│   │   ├── services/       # Axios API service
-│   │   └── App.js
-│   └── package.json
-│
 ├── SCALABILITY.md
 └── README.md
-```
 
----
+## 🎯 Skills Demonstrated
 
-## Setup & Running
+- Full Stack Development
+- REST API Design
+- Authentication & Authorization
+- Database Design
+- Secure Coding Practices
+- Frontend Development
+- Backend Development
 
-### Prerequisites
-- Node.js v18+
-- MongoDB running locally (or a MongoDB Atlas URI)
+## ⚙️ Installation
 
-### Backend
+Backend
 
-```bash
-cd backend
-cp .env.example .env
-# edit .env with your MongoDB URI and a strong JWT secret
 npm install
 npm run dev
-```
 
-Server runs on `http://localhost:5000`
+Frontend
 
-Swagger docs: `http://localhost:5000/api-docs`
-
-### Frontend
-
-```bash
-cd frontend
 npm install
 npm start
-```
 
-Frontend runs on `http://localhost:3000`
+## 👨‍💻 Author
 
----
-
-## API Overview (v1)
-
-All endpoints are prefixed with `/api/v1`
-
-### Auth
-| Method | Endpoint | Auth | Description |
-|--------|----------|------|-------------|
-| POST | /auth/register | No | Register new user |
-| POST | /auth/login | No | Login, returns JWT |
-| GET | /auth/me | Yes | Get current user |
-
-### Tasks
-| Method | Endpoint | Auth | Description |
-|--------|----------|------|-------------|
-| GET | /tasks | Yes | Get tasks (own tasks, or all if admin) |
-| POST | /tasks | Yes | Create task |
-| GET | /tasks/:id | Yes | Get single task |
-| PUT | /tasks/:id | Yes | Update task |
-| DELETE | /tasks/:id | Yes | Delete task |
-
-Query params for GET /tasks: `status`, `priority`, `page`, `limit`
-
-### Users (Admin only)
-| Method | Endpoint | Auth | Description |
-|--------|----------|------|-------------|
-| GET | /users | Admin | List all users |
-| GET | /users/:id | Admin | Get user by ID |
-| PATCH | /users/:id/role | Admin | Change user role |
-| DELETE | /users/:id | Admin | Delete user |
-
-### To create an admin user
-Register normally, then manually update the role in MongoDB:
-```js
-db.users.updateOne({ email: "your@email.com" }, { $set: { role: "admin" } })
-```
-
----
-
-## Security measures
-
-- Passwords hashed with bcrypt (salt rounds: 12)
-- JWT tokens with configurable expiry
-- Passwords never returned in API responses (`select: false`)
-- Rate limiting on all routes (stricter on auth routes)
-- Helmet for security headers
-- Input validation and sanitization via express-validator
-- Vague error messages on failed auth (don't leak which field failed)
-- Users can't self-assign admin role on registration
-- Admins can't delete/demote themselves
-
----
-
-## Environment Variables
-
-```
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/taskflow
-JWT_SECRET=your_secret_here
-JWT_EXPIRES_IN=7d
-NODE_ENV=development
-FRONTEND_URL=http://localhost:3000
-```
-
----
-
-See `SCALABILITY.md` for notes on scaling this to production.
-=======
-# Task-Manager-Task-Flow-
-A Task Management Web Application with a secure REST API backend and a React frontend. Users can register, log in, and manage their personal tasks. Admins can manage all users and see all tasks.
-Built a full-stack task management REST API with JWT authentication, role-based access control (user/admin), and a React frontend — using Node.js, Express, MongoDB, and Swagger for API documentation.
->>>>>>> 00e043eba2822a372a06cf37ab485137eec13140
+Tanishq Sangale
