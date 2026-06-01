@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ⚡ TaskFlow — REST API + Frontend
 
 A full-stack task management app built as part of the Backend Developer Intern assignment.
@@ -143,3 +144,8 @@ FRONTEND_URL=http://localhost:3000
 ---
 
 See `SCALABILITY.md` for notes on scaling this to production.
+=======
+# Task-Manager-Task-Flow-
+A Task Management Web Application with a secure REST API backend and a React frontend. Users can register, log in, and manage their personal tasks. Admins can manage all users and see all tasks.
+Built a full-stack task management REST API with JWT authentication, role-based access control (user/admin), and a React frontend — using Node.js, Express, MongoDB, and Swagger for API documentation.
+>>>>>>> 00e043eba2822a372a06cf37ab485137eec13140
